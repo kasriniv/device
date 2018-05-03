@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "dd96ba20-4bf0-441c-ba3b-38ac1299b92f",
+		"name": "device",
+		"description": "version=1.0 for all device services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "device",
+			"description": "Folder for device",
+			"item": [
+				{
+					"name": "get device",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bae1b1d9-f26b-49be-8fc1-20433071f30d",
+								"type": "text/javascript",
+								"exec": [
+									"//var expectedName = globals[\"name\"];",
+									"var expectedName=\"My fav implmentation kind\";",
+									"var jsonData = JSON.parse(responseBody);",
+									"console.log(\"test1\");",
+									"",
+									"var schema = {",
+									" \"type\": \"object\",",
+									" \"properties\": {",
+									"    \"name\": { \"type\": \"string\", \"enum\": [expectedName] },",
+									"    \"category\": { \"type\": \"string\" },",
+									"   ",
+									"    \"id\": { \"type\": \"number\" },",
+									"    \"region\": { \"type\": \"string\" }",
+									"  }",
+									"};",
+									"",
+									"tests[\"Valid name in response\"] = tv4.validate(jsonData, schema);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http:///device",
+							"host": [
+								"http:"
+							],
+							"port": "",
+							"path": [
+								"",
+								"",
+								"device"
+							]
+						},
+						"description": "get device"
+					},
+					"response": [
+						{
+							"id": "1f70c429-d67a-4617-b7d6-046428bc553e",
+							"name": "get device",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http:///device",
+									"host": [
+										"http:"
+									],
+									"port": "",
+									"path": [
+										"",
+										"",
+										"device"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [],
+							"cookie": [],
+							"body": "{\n\t\"name\": \"my mock device\",\n\t\"category\": \"iphone is what you see for mock\",\n\t\"id\": 3,\n\t\"region\": \"Americas\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update a device",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "send in a req of type device"
+						},
+						"url": {
+							"raw": "http:///device",
+							"host": [
+								"http:"
+							],
+							"port": "",
+							"path": [
+								"",
+								"",
+								"device"
+							]
+						},
+						"description": "update a device"
+					},
+					"response": []
+				},
+				{
+					"name": "create a device",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "send me device"
+						},
+						"url": {
+							"raw": "http:///device",
+							"host": [
+								"http:"
+							],
+							"port": "",
+							"path": [
+								"",
+								"",
+								"device"
+							]
+						},
+						"description": "create a device"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "cbfe099c-f4ee-48b0-9315-6d555c0f9e0f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "03fd1c90-7917-4aee-82d6-c4a9c14953a1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
