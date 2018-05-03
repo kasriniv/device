@@ -1,0 +1,89 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "device",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/device": {
+      "get": {
+        "summary": "get device",
+        "description": "get device",
+        "responses": {
+          "200": {
+            "description": "all is well",
+            "schema": {
+              "$ref": "#/definitions/device"
+            }
+          }
+        }
+      },
+      "put": {
+        "summary": "update a device",
+        "description": "update a device",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "send in a req of type device",
+            "schema": {
+              "$ref": "#/definitions/device"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "all good",
+            "schema": {
+              "$ref": "#/definitions/device"
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "create a device",
+        "description": "create a device",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "send me device",
+            "schema": {
+              "$ref": "#/definitions/device"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "all good",
+            "schema": {
+              "$ref": "#/definitions/device"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "device": {
+      "title": "Root Type for device",
+      "description": "The root of the device type's schema.",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "region": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
