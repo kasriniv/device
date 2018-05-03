@@ -1,0 +1,94 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0.0",
+    "title" : "device"
+  },
+  "paths" : {
+    "/device" : {
+      "get" : {
+        "summary" : "get device",
+        "description" : "get device",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "all is well",
+            "schema" : {
+              "$ref" : "#/definitions/device"
+            }
+          }
+        },
+        "x-contentType" : "application/json",
+        "x-accepts" : "application/json"
+      },
+      "post" : {
+        "summary" : "create a device",
+        "description" : "create a device",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "send me device",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/device"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "all good",
+            "schema" : {
+              "$ref" : "#/definitions/device"
+            }
+          }
+        },
+        "x-contentType" : "application/json",
+        "x-accepts" : "application/json"
+      },
+      "put" : {
+        "summary" : "update a device",
+        "description" : "update a device",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "body",
+          "description" : "send in a req of type device",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/device"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "all good",
+            "schema" : {
+              "$ref" : "#/definitions/device"
+            }
+          }
+        },
+        "x-contentType" : "application/json",
+        "x-accepts" : "application/json"
+      }
+    }
+  },
+  "definitions" : {
+    "device" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        },
+        "category" : {
+          "type" : "string"
+        },
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "region" : {
+          "type" : "string"
+        }
+      },
+      "title" : "Root Type for device",
+      "description" : "The root of the device type's schema."
+    }
+  }
+}
